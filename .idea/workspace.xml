@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5aa181eb-a08d-4ff5-b24b-93cc4c7857de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Arduino.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Arduino.py" beforeDir="false" afterPath="$PROJECT_DIR$/UART.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +39,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Arduino">
+  <component name="RunManager" selected="Python.UART">
     <configuration name="Arduino" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="guardsmarter" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -53,7 +52,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Arduino.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\noam2\Desktop\guardsmarter\UART.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UART" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="guardsmarter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/UART.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -106,6 +126,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.UART" />
         <item itemvalue="Python.Arduino" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.face_rec" />
@@ -129,7 +150,13 @@
       <option name="presentableId" value="LOCAL‎00001" />
       <updated>1585669368850</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL‎00002" summary="added arduino gate control">
+      <created>1585679956920</created>
+      <option name="number" value="LOCAL‎00002" />
+      <option name="presentableId" value="LOCAL‎00002" />
+      <updated>1585679956920</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,6 +174,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added import bot" />
-    <option name="LAST_COMMIT_MESSAGE" value="added import bot" />
+    <MESSAGE value="added arduino gate control" />
+    <option name="LAST_COMMIT_MESSAGE" value="added arduino gate control" />
   </component>
 </project>
