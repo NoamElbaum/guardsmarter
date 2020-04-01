@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5aa181eb-a08d-4ff5-b24b-93cc4c7857de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dbNames.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dbPlates.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,28 +31,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.dbNames">
-    <configuration name="Arduino" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="guardsmarter" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\noam2\Desktop\guardsmarter\UART.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.dbPlates">
     <configuration name="Bot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="guardsmarter" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -137,13 +116,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="dbPlates" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="guardsmarter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dbPlates.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.dbPlates" />
         <item itemvalue="Python.dbNames" />
         <item itemvalue="Python.audioRec" />
         <item itemvalue="Python.Bot" />
         <item itemvalue="Python.UART" />
-        <item itemvalue="Python.Arduino" />
       </list>
     </recent_temporary>
   </component>
@@ -189,7 +189,13 @@
       <option name="presentableId" value="LOCAL‎00005" />
       <updated>1585749812840</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL‎00006" summary="added database names based on txt files">
+      <created>1585750011620</created>
+      <option name="number" value="LOCAL‎00006" />
+      <option name="presentableId" value="LOCAL‎00006" />
+      <updated>1585750011620</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -210,34 +216,35 @@
     <MESSAGE value="added arduino gate control" />
     <MESSAGE value="added the Bot system" />
     <MESSAGE value="added the voiceRec hebrew code" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the voiceRec hebrew code" />
+    <MESSAGE value="added database names based on txt files" />
+    <option name="LAST_COMMIT_MESSAGE" value="added database names based on txt files" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="0" key="CommitChangelistDialog2" timestamp="1585749811512">
+    <state x="463" y="0" key="CommitChangelistDialog2" timestamp="1585750010289">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="370" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585746201067" />
-    <state x="463" y="0" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585749811512" />
+    <state x="463" y="0" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585750010289" />
     <state x="739" y="274" key="FileChooserDialogImpl" timestamp="1585748483417">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585748483417" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1585749974689">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1585750133336">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585749974689" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1585749974689">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585750133336" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1585750133336">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585749974689" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1585749974689">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585750133336" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1585750133336">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585749974689" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1585749974689">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585750133336" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1585750133336">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585749974689" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585750133336" />
     <state x="147" y="71" key="MergeDialog" timestamp="1585746185392">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
