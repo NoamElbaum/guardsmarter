@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5aa181eb-a08d-4ff5-b24b-93cc4c7857de" name="Default Changelist" comment="">
+    <list default="true" id="5aa181eb-a08d-4ff5-b24b-93cc4c7857de" name="Default Changelist" comment="added arduino gate control&#10;added //test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Arduino.py" beforeDir="false" afterPath="$PROJECT_DIR$/UART.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,20 +23,9 @@
   <component name="ProjectId" id="1X4V2i9i3N5CZJk0yZcm4pMoYff" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.UART">
     <configuration name="Arduino" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -175,6 +163,17 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added import bot" />
     <MESSAGE value="added arduino gate control" />
-    <option name="LAST_COMMIT_MESSAGE" value="added arduino gate control" />
+    <MESSAGE value="added arduino gate control&#10;added //test" />
+    <option name="LAST_COMMIT_MESSAGE" value="added arduino gate control&#10;added //test" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="424" y="0" key="CommitChangelistDialog2" timestamp="1585745959741">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="424" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585745959741" />
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1585745977782">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585745977782" />
   </component>
 </project>
