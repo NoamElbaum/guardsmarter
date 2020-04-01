@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5aa181eb-a08d-4ff5-b24b-93cc4c7857de" name="Default Changelist" comment="" />
+    <list default="true" id="5aa181eb-a08d-4ff5-b24b-93cc4c7857de" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/audioRec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guardSmarter.py" beforeDir="false" afterPath="$PROJECT_DIR$/guardSmarter.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,19 +32,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.UART">
+  <component name="RunManager" selected="Python.audioRec">
     <configuration name="Arduino" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="guardsmarter" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -54,6 +46,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="C:\Users\noam2\Desktop\guardsmarter\UART.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Bot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="guardsmarter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Bot.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -83,7 +96,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="face_rec" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="audioRec" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="guardsmarter" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -95,7 +108,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/face_rec.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/audioRec.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -127,10 +140,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.audioRec" />
+        <item itemvalue="Python.Bot" />
         <item itemvalue="Python.UART" />
         <item itemvalue="Python.Arduino" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.face_rec" />
       </list>
     </recent_temporary>
   </component>
@@ -164,7 +178,13 @@
       <option name="project" value="LOCAL" />
       <updated>1585746201764</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL‎00004" summary="added the Bot system">
+      <created>1585749198861</created>
+      <option name="number" value="LOCAL‎00004" />
+      <option name="presentableId" value="LOCAL‎00004" />
+      <updated>1585749198861</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -183,13 +203,35 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added import bot" />
     <MESSAGE value="added arduino gate control" />
-    <option name="LAST_COMMIT_MESSAGE" value="added arduino gate control" />
+    <MESSAGE value="added the Bot system" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the Bot system" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="370" y="0" key="CommitChangelistDialog2" timestamp="1585746201067">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="463" y="0" key="CommitChangelistDialog2" timestamp="1585749197240">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="370" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585746201067" />
+    <state x="463" y="0" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585749197240" />
+    <state x="739" y="274" key="FileChooserDialogImpl" timestamp="1585748483417">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585748483417" />
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1585749762845">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585749762845" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1585749762845">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585749762845" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1585749762845">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585749762845" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1585749762845">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585749762845" />
     <state x="147" y="71" key="MergeDialog" timestamp="1585746185392">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -198,6 +240,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="481" y="129" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1585746185398" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1585749611272">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585749611272" />
     <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585746176443">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

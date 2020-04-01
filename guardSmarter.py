@@ -1,4 +1,4 @@
-from win32com.client import Dispatch
+
 import speech_recognition as sr
 import codecs
 from PIL import Image
@@ -8,9 +8,6 @@ import cv2
 
 
 
-def Robo(text):
-    robo = Dispatch("SAPI.SpVoice")
-    robo.Speak(text)
 def Listen():
     r = sr.Recognizer()
     with sr.Microphone() as source:
@@ -19,8 +16,6 @@ def Listen():
         try:
             text = r.recognize_google(audio,  language='he')
             return text
-
-    ##7nb6yygytjhgyuhhg5ft5y6565upo
         except:
             print("Sorry could not recognize what you said")
 def readNames(clientName):
