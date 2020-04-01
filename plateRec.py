@@ -4,8 +4,12 @@ import numpy as np
 import cv2
 
 
-def read_plate(imageName):
+def rec(userPlate):
+
+    imageName = userPlate ##image name
+
     plateNum = []
+    citizenPlate = ['5', '5', '6', '0', '4', '2', '0', '1']
     img = Image.open(imageName)
     thresh = 70
     fn = lambda x: 255 if x > thresh else 0
@@ -13,7 +17,7 @@ def read_plate(imageName):
 
     width, height = r.size
 
-    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     image = cv2.imread(imageName)
     imageClean = cv2.imread(imageName)
     original = image.copy()
@@ -31,57 +35,50 @@ def read_plate(imageName):
     bigX = 0
     bigY = 0
     for c in cnts:
-        x, y, w, h = cv2.boundingRect(c)
-        if bigW * bigH <= w * h:
+        x,y,w,h = cv2.boundingRect(c)
+        if bigW * bigH <= w*h:
             bigW = w
             bigH = h
             bigX = x
             bigY = y
 
-        cv2.rectangle(original, (x, y), (x + w, y + h), (36, 255, 12), 2)
 
-    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        cv2.rectangle(original, (x, y), (x + w, y + h), (36,255,12), 2)
 
-    # croping-cv2
-    cv2.rectangle(original, (bigX, bigY), (bigX + bigW, bigY + bigH), (255, 0, 0), 2)
-    crop_img = imageClean[bigY:bigY + bigH, bigX:bigX + bigW]  ##for debug
-    crop_img_mask = mask[bigY:bigY + bigH, bigX:bigX + bigW]
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    # gray image cropped
+
+    #croping-cv2
+    cv2.rectangle(original, (bigX, bigY), (bigX+bigW, bigY+bigH), (255,0,0), 2)
+    crop_img = imageClean[bigY:bigY+bigH, bigX:bigX+bigW] ##for debug
+    crop_img_mask = mask[bigY:bigY+bigH, bigX:bigX+bigW]
+
+    ##gray image cropped
     grayImage = cv2.cvtColor(crop_img, cv2.COLOR_BGR2GRAY)
     (thresh, blackAndWhiteImage) = cv2.threshold(grayImage, 127, 255, cv2.THRESH_BINARY)
 
-    # tesseract
-    plate = []
-    plate.append(ocr.image_to_string(crop_img_mask))
-    plate.append(ocr.image_to_string(crop_img))
-    plate.append(ocr.image_to_string(grayImage))
-    plate.append(ocr.image_to_string(blackAndWhiteImage))
-    print(f"regular crop is : {plate[1]}")
-    print(f"mask crop is : {plate[0]}")
-    print(f"gray crop is : {plate[2]}")
-    print(f"gray(black white) crop is : {plate[3]}")
 
-    crop = 0
+    ##tesseract
+    plate = ocr.image_to_string(crop_img_mask)
+    plate1 = ocr.image_to_string(crop_img)
+    plate2 = ocr.image_to_string(grayImage)
+    plate3 = ocr.image_to_string(blackAndWhiteImage)
+    print("regular crop is : " + plate1)
+    print("mask crop is : " + plate)
+    print("gray crop is : " + plate2)
+    print("gray(black white) crop is : " + plate3)
 
-    if plate[crop].__len__() < 3:
-        crop = 1
-    elif plate[crop].__len__() < 3:
-        crop = 2
-    elif plate[crop].__len__() < 3:
-        crop = 3
-    else:
-        print("cant read plate")
 
-    for i in plate[crop]:
+    for i in plate:
         if i.isdigit():
             plateNum.append(i)
+    print(plateNum)
+    return ''.join(plateNum)
 
-    # debug image cv2
+    ##debug image cv2
     cv2.imshow('mask', mask)
     cv2.imshow('original', original)
     cv2.imshow("Cropped cv2", crop_img)
     cv2.imshow("Cropped cv2 masked", crop_img_mask)
     cv2.imshow("Cropped cv2 gray(black white)", blackAndWhiteImage)
-    # cv2.waitKey()
-    return plateNum
+    cv2.waitKey()
