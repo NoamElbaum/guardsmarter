@@ -28,6 +28,12 @@ def read(select_frase):
     return data
 
 
+def read_where(select_frase, where_frase):
+    DB.execute(f"SELECT {select_frase} from guardsmarter.residents where {where_frase};")
+    data = DB.fetchall()
+    return data
+
+
 if __name__ == '__main__':
-    #add_resident(211715966, 3292063, 'faces/donald trump.jpg', 'Noam', 'Elbaum')
+    # add_resident(211715966, 3292063, 'faces/donald trump.jpg', 'Noam', 'Elbaum')
     read('pic')
