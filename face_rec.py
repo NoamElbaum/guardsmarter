@@ -3,7 +3,7 @@ import os
 import cv2
 import face_recognition
 import numpy as np
-from time import sleep
+import sql_interface as sql
 
 
 def get_encoded_faces():
@@ -14,13 +14,16 @@ def get_encoded_faces():
     :return: dict of (name, image encoded)
     """
     encoded = {}
-
-    for dirpath, dnames, fnames in os.walk("./faces"):
-        for f in fnames:
-            if f.endswith(".jpg") or f.endswith(".png"):
-                face = fr.load_image_file("faces/" + f)
-                encoding = fr.face_encodings(face)[0]
-                encoded[f.split(".")[0]] = encoding
+    data = sql.read('ID, pic')
+    for bytePic in data:
+        print(bytePic[0])
+        with open('f.jpg', 'wb') as f:
+            f.write(bytePic[1])
+        face = fr.load_image_file('f.jpg')
+        encoding = fr.face_encodings(face)[0]
+        encoded[str(bytePic[0])] = encoding
+        os.remove('f.jpg')
+        
 
     return encoded
 
@@ -80,8 +83,9 @@ def classify_face(im):
     # Display the resulting image
 
     cv2.imshow('result', img)
+
     return face_names
 
 
 if __name__ == "__main__":
-        print(classify_face('test3.jpg'))
+    print(classify_face('test_faces/test.jpg'))
