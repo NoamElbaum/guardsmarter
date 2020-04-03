@@ -40,5 +40,5 @@ def write(query, data):
 
 
 if __name__ == '__main__':
-    # add_resident(211715966, 3292063, 'faces/donald trump.jpg', 'Noam', 'Elbaum')
+    add_resident(211715966, 1234590, 'faces/donald trump.jpg', 'Noam', 'Elbaum')
     read('pic')
