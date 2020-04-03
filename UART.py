@@ -1,9 +1,7 @@
 import serial
-import time
 
 arduino = 'COM11'
 fpga = 'COM12'
-
 
 def open_gate():
     return send_ar('o') & send_fpga('o')
