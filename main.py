@@ -1,15 +1,15 @@
-import datetime
+from datetime import datetime
 import plateRec
 import face_rec
 import sql_interface as sql
 import terminal_network as tour
 import UART
-import Bot
 
 last_plate = 0
 coming_plate = 1
 plates = sql.read('car_num')
-print(plates)
+plates = plates[0]
+print('plates: ' + str(plates))
 
 
 def log(id, plate):
@@ -25,7 +25,7 @@ def log(id, plate):
 while 1:
 
     while coming_plate != last_plate:
-        coming_plate = plateRec.read_plate('plates/plate2.jpg')  # take plate photo
+        coming_plate = plateRec.read_plate('plates/plate1.png')  # take plate photo
         print('waiting for car')
 
     for p in plates:
@@ -41,7 +41,7 @@ while 1:
 
         pass  # add bot here
     else:
-        face_id = face_rec.classify_face('test_faces/test3.jpg')  # take face photo
+        face_id = face_rec.classify_face('test_faces/test.jpg')  # take face photo
         registered_plate_id = sql.read_where('ID', f'car_num = {p}')
         if face_id == registered_plate_id:
             print('opened')
