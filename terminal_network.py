@@ -5,6 +5,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((socket.gethostname(), 1234))
 s.listen(5)
 
+print('waiting for connection')
 client, address = s.accept()
 print(f'connected to {client} {address}')
 
