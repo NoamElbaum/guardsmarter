@@ -34,6 +34,11 @@ def read_where(select_frase, where_frase):
     return data
 
 
+def write(query, data):
+    DB.execute(query, data)
+    mydb.commit()
+
+
 if __name__ == '__main__':
     # add_resident(211715966, 3292063, 'faces/donald trump.jpg', 'Noam', 'Elbaum')
     read('pic')
