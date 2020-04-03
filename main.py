@@ -1,3 +1,4 @@
+import datetime
 import plateRec
 import face_rec
 import sql_interface as sql
@@ -12,13 +13,20 @@ print(plates)
 
 
 def log(id, plate):
-    pass  # logger will be here
+    now = datetime.now()
+    date = now.strftime("%Y-%m-%d %H:%M:%S.%f")
+    name = sql.read_where("f_name, l_name", f"id = {id}")
+    name = name[0][0] + ' ' + name[0][1]
+    data = (date, plate, name, id)
+    print(data)
+    sql.write("""insert into entries_log values(%s, %s, %s, %s)""", data)
 
 
 while 1:
 
     while coming_plate != last_plate:
         coming_plate = plateRec.read_plate('plates/plate2.jpg')  # take plate photo
+        print('waiting for car')
 
     for p in plates:
         if coming_plate == p:
