@@ -1,5 +1,5 @@
 import socket
-import winsound
+from playsound import playsound
 
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -10,4 +10,4 @@ while 1:
     print(msg)
     if msg == 'come to the gate':
         for i in range(2):
-            winsound.PlaySound(r"alert.wav", winsound.SND_FILENAME)
+            playsound("alert.wav")
