@@ -10,4 +10,5 @@ face_recognition
 pywin32
 speechrecognition
 pyserial
+playsound
 
