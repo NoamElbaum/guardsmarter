@@ -1,5 +1,5 @@
 from datetime import datetime
-import plateRec
+import plate_rec
 import face_rec
 import sql_interface as sql
 import terminal_network as tour
@@ -26,7 +26,7 @@ def log(id, plate):
 while 1:
 
     while coming_plate != last_plate:
-        coming_plate = plateRec.read_plate('plates/plate1.png')  # take plate photo
+        coming_plate = plate_rec.read_plate('plates/plate1.png')  # take plate photo
         print('waiting for car')
 
     for p in plates:
