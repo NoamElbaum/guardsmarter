@@ -40,5 +40,11 @@ def write(query, data):
 
 
 if __name__ == '__main__':
-    add_resident(211715966, 1234590, 'faces/donald trump.jpg', 'Noam', 'Elbaum')
+    id_num = int(input('enter residents id: '))
+    car_num = int(input('enter car num: '))
+    img_path = str(input('enter pic path: '))
+    f_name = str(input('enter first name: '))
+    l_name = str(input('enter last name: '))
+
+    add_resident(id_num , car_num, img_path, f_name, l_name)
     read('pic')
