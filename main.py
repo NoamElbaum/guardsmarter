@@ -4,6 +4,7 @@ import face_rec
 import sql_interface as sql
 import terminal_network as tour
 import UART
+import Bot
 
 last_plate = 0
 coming_plate = 1
