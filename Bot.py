@@ -1,0 +1,46 @@
+<<<<<<< HEAD
+from win32com.client import Dispatch
+import speech_recognition as sr
+=======
+import speech_recognition as sr
+from gtts import gTTS
+from playsound import playsound
+import os
+
+>>>>>>> 7a67f0cda288bf8b265b6e68a563ea21100ad210
+
+def speak(text):
+    out = gTTS(text=text, lang='en', slow=False)
+    out.save('play.mp3')
+    playsound("play.mp3")
+    os.remove("play.mp3")
+
+
+def Listen():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+<<<<<<< HEAD
+        print("Hello, please say your name :")
+        audio = r.listen(source)
+        try:
+            text = r.recognize_google(audio,  language='he')
+=======
+        audio = r.listen(source)
+        try:
+            text = r.recognize_google(audio, language='he')
+>>>>>>> 7a67f0cda288bf8b265b6e68a563ea21100ad210
+            return text
+        except:
+            print("Sorry could not recognize what you said")
+
+
+<<<<<<< HEAD
+
+Robo("Hello")
+=======
+if __name__ == '__main__':
+    speak('hello what is your name')
+    print('name: ')
+    text = Listen()
+    print(text)
+>>>>>>> 7a67f0cda288bf8b265b6e68a563ea21100ad210
