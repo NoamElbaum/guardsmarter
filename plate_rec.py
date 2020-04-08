@@ -1,4 +1,3 @@
-from PIL import Image
 import pytesseract as ocr
 import numpy as np
 import cv2
@@ -6,14 +5,7 @@ import cv2
 
 def read_plate(image_name):
     plate_num = []
-    img = Image.open(image_name)
-    thresh = 70
-    fn = lambda x: 255 if x > thresh else 0
-    r = img.convert('L').point(fn, mode='1')
 
-    width, height = r.size
-
-    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     image = cv2.imread(image_name)
     image_clean = cv2.imread(image_name)
     original = image.copy()
