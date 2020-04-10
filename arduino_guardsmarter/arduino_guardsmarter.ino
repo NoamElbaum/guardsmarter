@@ -1,4 +1,7 @@
 #include <Servo.h>
+#include <MFRC522.h>
+
+#define gate_servo 6
 #define intPin 2
 
 Servo gate;
@@ -9,7 +12,7 @@ int gate_pos = 90;
 void setup() 
 {
   Serial.begin(9600);
-  gate.attach(9);
+  gate.attach(gate_servo);
   pinMode(13,OUTPUT);
   digitalWrite(13,LOW);
   attachInterrupt(digitalPinToInterrupt(intPin), help, RISING)
