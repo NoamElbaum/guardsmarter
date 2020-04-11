@@ -10,9 +10,10 @@ CREATE TABLE `residents` (
 );
 
   
-  CREATE TABLE `guardsmarter`.`entries_log` (
-  `time` DATETIME NOT NULL,
-  `car_num` INT NULL,
-  `driver_name` VARCHAR(45) NULL,
-  `driver_id` INT NULL,
-  PRIMARY KEY (`time`));
+ CREATE TABLE `entries_log` (
+  `time` datetime NOT NULL,
+  `car_num` int NOT NULL,
+  `driver_name` varchar(80) NOT NULL,
+  `driver_id` int NOT NULL,
+  PRIMARY KEY (`time`)
+);
