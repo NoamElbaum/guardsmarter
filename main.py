@@ -10,21 +10,13 @@ import time
 last_plate = 0
 coming_plate = 1
 plates = sql.read('car_num')
-names = sql.read('f_name')
+f_names = sql.read('f_name')
+ID = sql.read('ID')
 
-f_names = []
 ynList = ["כן", "לא"]
 
-for n in names:
-    f_names.append(n[0])
-
-tempID = sql.read('ID')
-ID = []
-for n in tempID:
-    ID.append(n[0])
-
 print(f_names)
-
+print(ID)
 print('plates: ' + str(plates))
 
 
