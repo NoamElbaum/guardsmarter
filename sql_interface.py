@@ -40,11 +40,20 @@ def write(query, data):
 
 
 if __name__ == '__main__':
-    id_num = int(input('enter residents id: '))
-    car_num = int(input('enter car num: '))
-    img_path = str(input('enter pic path: '))
-    f_name = str(input('enter first name: '))
-    l_name = str(input('enter last name: '))
+    # id_num = int(input('enter residents id: '))
+    # car_num = int(input('enter car num: '))
+    # img_path = str(input('enter pic path: '))
+    # f_name = str(input('enter first name: '))
+    # l_name = str(input('enter last name: '))
+    # add_resident(id_num , car_num, img_path, f_name, l_name)
 
-    add_resident(id_num , car_num, img_path, f_name, l_name)
-    read('pic')
+    # run only once.
+    add_resident(211715966, 1234590, 'faces/NoamElbaum.jpg', 'נועם', 'אלבאום')
+    add_resident(213546879, 2354430, 'faces/donald trump.jpg', 'דונלד','טראמפ')
+    add_resident(322759226, 83494801, 'faces/Shon Bar.jpg', 'דונלד', 'טראמפ')
+
+    # copy to the beginning of main
+    tempID = sql.read('ID')
+    ID = []
+    for n in tempID:
+        ID.append(n[0])
