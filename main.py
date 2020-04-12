@@ -9,7 +9,14 @@ import Bot
 last_plate = 0
 coming_plate = 1
 plates = sql.read('car_num')
-plates = plates[0]
+names = sql.read('f_name')
+f_names = []
+
+for n in names:
+    f_names.append(n[0])
+
+print(f_names)
+
 print('plates: ' + str(plates))
 
 
@@ -30,7 +37,7 @@ while 1:
         print('waiting for car')
 
     for p in plates:
-        if coming_plate == p:
+        if coming_plate == p[0]:
             car_num = p
         else:
             car_num = 0
