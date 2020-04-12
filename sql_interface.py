@@ -25,7 +25,10 @@ def add_resident(ID, carNum, picPath, f_name, l_name):
 def read(select_frase):
     DB.execute(f"SELECT {select_frase} from guardsmarter.residents;")
     data = DB.fetchall()
-    return data
+    formatted_data = []
+    for d in data:
+        formatted_data.append(d[0])
+    return formatted_data
 
 
 def read_where(select_frase, where_frase):
