@@ -23,7 +23,8 @@ def listen():
 
 
 if __name__ == '__main__':
-    speak('hello what is your name')
-    print('name: ')
-    text = listen()
-    print(text)
+    for i in range(3):
+        speak('hello what is your name')
+        print('name: ')
+        text = listen()
+        print(text)
