@@ -13,10 +13,15 @@ plates = sql.read('car_num')
 names = sql.read('f_name')
 
 f_names = []
-ynList = ["כן","לא"]
+ynList = ["כן", "לא"]
 
 for n in names:
     f_names.append(n[0])
+
+tempID = sql.read('ID')
+ID = []
+for n in tempID:
+    ID.append(n[0])
 
 print(f_names)
 
@@ -45,23 +50,22 @@ while 1:
         else:
             car_num = 0
 
-    if car_num == 0:  #plate num not working
-
-        if UART.interrupt_check():
-            tour.alert()
+    if car_num == 0:  # plate num not working
         Bot.speak("Hello, Welcome to guardsmarter!, What is your name?")
         Bot.speak("If u have issues u can press the emergency button for help")
+        if UART.interrupt_check():
+            tour.alert()
         clientName = Bot.listen()
         for name in f_names:
-            if name == tourName: #in the name list
+            if name == clientName:  # in the name list
                 UART.open_gate();
                 time.sleep(10)
-            else: #not in the name list
+            else:  # not in the name list
                 tour.alert()
 
 
 
-    else: #num wworking face not working
+    else:  # num wworking face not working
         face_id = face_rec.classify_face('test_faces/test.jpg')  # take face photo
         registered_plate_id = sql.read_where('ID', f'car_num = {p}')
         if face_id == registered_plate_id:
@@ -69,12 +73,13 @@ while 1:
             UART.open_gate()
             log(face_id)
         else:
-            Bot.speak("Hello welcome to guardsmarter!  your face is not matching the correct plate number, is this your car?")
-            carValidate = Bot.listen() #Waiting for yes or no
+            Bot.speak(
+                "Hello welcome to guardsmarter!  your face is not matching the correct plate number, is this your car?")
+            carValidate = Bot.listen()  # Waiting for yes or no
             if carValidate == ynList[0]:
                 Bot.speak("Ok, may i have your personal ID number?")
                 clientID = Bot.listen()
-                #insert id check
+                # insert id check
             else:
                 Bot.speak("Please wait for a guard to come.")
                 tour.alert()
