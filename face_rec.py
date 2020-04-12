@@ -22,7 +22,6 @@ def get_encoded_faces():
         encoding = fr.face_encodings(face)[0]
         encoded[str(bytePic[0])] = encoding
         os.remove('f.jpg')
-        
 
     return encoded
 
@@ -81,10 +80,12 @@ def classify_face(im):
 
     # Display the resulting image
 
-    cv2.imshow('result', img)
+    # ------------------ debug ------------------------
+    # cv2.imshow('result', img)
+    # cv2.waitKey()
 
     return face_names
 
 
 if __name__ == "__main__":
-    print(classify_face('test_faces/test.jpg'))
+    print(classify_face('test_faces/test3.jpg'))

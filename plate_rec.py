@@ -1,4 +1,3 @@
-from PIL import Image
 import pytesseract as ocr
 import numpy as np
 import cv2
@@ -6,19 +5,12 @@ import cv2
 
 def read_plate(image_name):
     plate_num = []
-    img = Image.open(image_name)
-    thresh = 70
-    fn = lambda x: 255 if x > thresh else 0
-    r = img.convert('L').point(fn, mode='1')
 
-    width, height = r.size
-
-    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     image = cv2.imread(image_name)
     image_clean = cv2.imread(image_name)
     original = image.copy()
 
-    ##cv2 recognition
+    # cv2 recognition
     image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
     lower = np.array([10, 120, 120], dtype="uint8")
     upper = np.array([25, 255, 255], dtype="uint8")
@@ -66,9 +58,8 @@ def read_plate(image_name):
             plate_num.append(i)
     plate_num = int(''.join(plate_num))
     print(plate_num)
-    return plate_num
 
-    ######################################## debug image cv2 #####################################################
+    # -------------------------------------- debug image cv2 -------------------------------------
     # cv2.imshow('mask', mask)
     # cv2.imshow('original', original)
     # cv2.imshow("Cropped cv2", crop_img)
@@ -76,6 +67,8 @@ def read_plate(image_name):
     # cv2.imshow("Cropped cv2 gray(black white)", blackAndWhiteImage)
     # cv2.waitKey()
 
+    return plate_num
+
 
 if __name__ == '__main__':
-    read_plate('plates/plate1.png')
+    read_plate('plates/plate5.jpg')
