@@ -58,8 +58,9 @@ while 1:
         clientName = Bot.listen()
         for name in f_names:
             if name == clientName:  # in the name list
-                UART.open_gate();
+                UART.open_gate()
                 time.sleep(10)
+                UART.close_gate()
             else:  # not in the name list
                 tour.alert()
 
@@ -79,7 +80,13 @@ while 1:
             if carValidate == ynList[0]:
                 Bot.speak("Ok, may i have your personal ID number?")
                 clientID = Bot.listen()
-                # insert id check
+                for cID in ID:
+                    if cID == clientID: #ID match
+                        UART.open_gate()
+                        time.sleep(10)
+                        UART.close_gate()
+                    else: #ID does not match
+                        tour.alert()
             else:
                 Bot.speak("Please wait for a guard to come.")
                 tour.alert()
