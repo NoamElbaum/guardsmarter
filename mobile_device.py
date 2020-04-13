@@ -1,10 +1,22 @@
 import socket
 from playsound import playsound
 
+s = socket.socket()
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect((socket.gethostname(), 1234))
-print('connected')
+
+def connect():
+    global s
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    try:
+        s.connect((socket.gethostname(), 1234))
+    except ConnectionRefusedError:
+        print('no connection')
+        connect()
+    else:
+        print('connected')
+
+
+connect()
 
 while 1:
     msg = s.recv(1024).decode("utf-8")
