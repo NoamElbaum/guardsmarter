@@ -6,34 +6,19 @@ import sql_interface as sql
 
 
 def get_encoded_faces():
-    """
-    looks through the faces folder and encodes all
-    the faces
-
-    :return: dict of (name, image encoded)
-    """
     encoded = {}
-    data = sql.read('ID, pic')
-    for bytePic in data:
-        print(bytePic[0])
+    id = sql.read('ID')
+    pic = sql.read('pic')
+    for i in range(len(pic)):
+        # debug
+        # print(f'{id[i]}: {pic[i]}')
         with open('f.jpg', 'wb') as f:
-            f.write(bytePic[1])
+            f.write(pic[i])
         face = fr.load_image_file('f.jpg')
         encoding = fr.face_encodings(face)[0]
-        encoded[str(bytePic[0])] = encoding
+        encoded[str(id[i])] = encoding
         os.remove('f.jpg')
-
     return encoded
-
-
-def unknown_image_encoded(img):
-    """
-    encode a face given the file name
-    """
-    face = fr.load_image_file("faces/" + img)
-    encoding = fr.face_encodings(face)[0]
-
-    return encoding
 
 
 def classify_face(im):
@@ -78,14 +63,12 @@ def classify_face(im):
             font = cv2.FONT_HERSHEY_DUPLEX
             cv2.putText(img, name, (left - 20, bottom + 15), font, 1.0, (255, 255, 255), 2)
 
-    # Display the resulting image
-
     # ------------------ debug ------------------------
-    # cv2.imshow('result', img)
-    # cv2.waitKey()
+    cv2.imshow('result', img)
+    cv2.waitKey()
 
     return face_names
 
 
 if __name__ == "__main__":
-    print(classify_face('test_faces/test3.jpg'))
+    print(classify_face('test_faces/test1.jpg'))
