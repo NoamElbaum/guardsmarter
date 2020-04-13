@@ -52,6 +52,20 @@ def send(p_name, c):
             return 0
 
 
+def card():
+    c = 'r'
+    try:
+        ser = serial.Serial(arduino, baudrate=9600, timeout=1)
+    except serial.serialutil.SerialException:
+        return 0
+    else:
+        time.sleep(0.05)
+        ser.write(c.encode('ascii'))
+        res = ser.readline().decode('ascii')
+        ser.close()
+        return res
+
+
 if __name__ == "__main__":
     while 1:
         print('int: ' + str(interrupt_check()))
