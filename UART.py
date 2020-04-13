@@ -1,14 +1,16 @@
 import serial
+import time
 
 arduino = 'COM11'
 fpga = 'COM12'
 
+
 def open_gate():
-    return send_ar('o') & send_fpga('o')
+    return send(arduino, 'o') & send(fpga, 'o')
 
 
 def close_gate():
-    return send_ar('c') & send_fpga('c')
+    return send(arduino, 'c') & send(fpga, 'c')
 
 
 def interrupt_check():
@@ -33,36 +35,17 @@ def interrupt_check():
                 return 0
 
 
-def send_ar(c):
+def send(p_name, c):
     try:
-        ser = serial.Serial(arduino, baudrate=9600, timeout=1)
+        ser = serial.Serial(port=p_name, baudrate=9600, timeout=1)
     except serial.serialutil.SerialException:
         return 0
     else:
-        for i in range(4):
-            ser.write(c.encode('ascii'))
-            res = ser.readline()
-        res = res.decode('ascii')
+        time.sleep(0.05)
+        ser.write(c.encode('ascii'))
+        res = ser.readline().decode('ascii')
         ser.close()
-        print(res)
-        if res[0] == c:
-            return 1
-        else:
-            return 0
-
-
-def send_fpga(c):
-    try:
-        ser = serial.Serial(fpga, baudrate=9600, timeout=1)
-    except serial.serialutil.SerialException:
-        return 0
-    else:
-        for i in range(4):
-            ser.write(c.encode('ascii'))
-            res = ser.readline()
-        res = res.decode('ascii')
-        ser.close()
-        print(res)
+        # print(res)
         if res[0] == c:
             return 1
         else:
