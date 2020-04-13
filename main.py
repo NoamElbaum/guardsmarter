@@ -19,6 +19,8 @@ print(f_names)
 print(ID)
 print('plates: ' + str(plates))
 
+tour.connect()
+
 
 def log(id, plate):
     now = datetime.now()
