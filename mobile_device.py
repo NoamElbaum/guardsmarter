@@ -9,7 +9,7 @@ print('connected')
 while 1:
     msg = s.recv(1024).decode("utf-8")
     print(msg)
-    if msg == 'come to the gate':
+    if msg == "הגיעה התראה משער היישוב נא להגיע במהירות":
         for i in range(2):
             playsound("alert.wav")
     else:
