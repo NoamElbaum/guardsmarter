@@ -59,11 +59,14 @@ void help()
 
 void RFID_read() 
 {  
-  if ( ! mfrc522.PICC_IsNewCardPresent()) // Reset the func if no new card present on the sensor/reader.
-    RFID_read();
-   
-  if ( ! mfrc522.PICC_ReadCardSerial())   // Select one of the cards
+  // Reset the func if no new card present on the sensor/reader.
+  if ( ! mfrc522.PICC_IsNewCardPresent())
     RFID_read();
 
-  mfrc522.PICC_DumpToSerial(&(mfrc522.uid)); //send the info from the card to the Serial bus
+  // Select one of the cards 
+  if ( ! mfrc522.PICC_ReadCardSerial())   
+    RFID_read();
+
+  //send the info from the card to the Serial bus
+  mfrc522.PICC_DumpToSerial(&(mfrc522.uid)); 
 }
