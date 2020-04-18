@@ -15,16 +15,18 @@ def listen():
     r = sr.Recognizer()
     with sr.Microphone() as source:
         audio = r.listen(source)
-        try:
-            text = r.recognize_google(audio, language='he')
-            return text
-        except:
-            print("Sorry could not recognize what you said")
+    try:
+        text = r.recognize_google(audio, language='he')
+    except sr.UnknownValueError:
+        print('Sorry, could not recognize what you said')
+        return 0
+    else:
+        return text
 
 
 if __name__ == '__main__':
-    for i in range(3):
+    while 1:
         speak('hello what is your name')
+        txt = listen()
         print('name: ')
-        text = listen()
-        print(text)
+        print(txt)
