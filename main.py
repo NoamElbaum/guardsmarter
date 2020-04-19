@@ -8,7 +8,8 @@ import Bot
 import time
 
 last_plate = 0
-coming_plate = 1
+coming_plate = 0
+car_num = 0
 plates = sql.read('car_num')
 f_names = sql.read('f_name')
 ID = sql.read('ID')
@@ -34,12 +35,14 @@ def log(id, plate):
 
 while 1:
 
-    while coming_plate != last_plate:
-        coming_plate = plate_rec.read_plate('plates/plate1.png')  # take plate photo
+    while coming_plate == last_plate:
+        num = plate_rec.read_plate('plates/plate1.png')  # take plate photo
+        if num < 10000000:
+            coming_plate = num
         print('waiting for car')
 
     for p in plates:
-        if coming_plate == p[0]:
+        if coming_plate == p:
             car_num = p
         else:
             car_num = 0
@@ -53,33 +56,33 @@ while 1:
         for name in f_names:
             if name == clientName:  # in the name list
                 UART.open_gate()
+                client_id = sql.read_where('ID', f'F_name = {name}')
+                log(client_id, coming_plate)
                 time.sleep(10)
                 UART.close_gate()
             else:  # not in the name list
                 tour.alert()
 
-
-
-    else:  # num wworking face not working
+    else:
         face_id = face_rec.classify_face('test_faces/test.jpg')  # take face photo
-        registered_plate_id = sql.read_where('ID', f'car_num = {p}')
+        registered_plate_id = sql.read_where('ID', f'car_num = {car_num}')
         if face_id == registered_plate_id:
             print('opened')
             UART.open_gate()
-            log(face_id)
-        else:
-            Bot.speak(
-                "Hello welcome to guardsmarter!  your face is not matching the correct plate number, is this your car?")
+            log(face_id, car_num)
+        else:               # num working face not working
+            Bot.speak("Hello welcome to guardsmarter!  your face is not matching the correct plate number, is this your car?")
             carValidate = Bot.listen()  # Waiting for yes or no
             if carValidate == ynList[0]:
                 Bot.speak("Ok, may i have your personal ID number?")
                 clientID = Bot.listen()
                 for cID in ID:
-                    if cID == clientID: #ID match
+                    if cID == clientID:  # ID match
+                        log(clientID, car_num)
                         UART.open_gate()
                         time.sleep(10)
                         UART.close_gate()
-                    else: #ID does not match
+                    else:  # ID does not match
                         tour.alert()
             else:
                 Bot.speak("Please wait for a guard to come.")
